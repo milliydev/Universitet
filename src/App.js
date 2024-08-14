@@ -16,8 +16,12 @@ import Customerdetail from './pages/customerdetail';
 import Calendar from './pages/calendar';
 import Chat from './pages/chat';
 import Wallet from './pages/wallet';
+import { Container, Row, Col } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
+
+    <Container className='container'>
     <BrowserRouter>
      <Sidebar>
         <Routes>
@@ -31,7 +35,7 @@ function App() {
           <Route path = "/productList" element= {<ProductList/>}/>
           <Route path = "/Rewiews" element= {<Rewiews/>}/>
           <Route path = "/Foods" element= {<Foods/>}/>
-          <Route path = "/FoodDetail" element= {<FoodDetail/>}/>
+          <Route path = "/foodDetail" element= {<FoodDetail/>}/>
           <Route path = "/Customerdetail" element= {<Customerdetail/>}/>
           <Route path = "/Calendar" element= {<Calendar/>}/>
           <Route path = "/Chat" element= {<Chat/>}/>
@@ -41,6 +45,7 @@ function App() {
           </Routes>
           </Sidebar>
     </BrowserRouter>
+    </Container>
   );
 }
 

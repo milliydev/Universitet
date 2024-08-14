@@ -1,19 +1,13 @@
 import React from 'react';
 import { GoHome } from 'react-icons/go';
 import { NavLink } from 'react-router-dom';
-import { VscListFlat } from "react-icons/vsc";
-import { MdOutlineDescription } from "react-icons/md";
+import { MdOutlineAccountCircle } from "react-icons/md";
 import { GoPeople } from "react-icons/go";
-import { IoStatsChartSharp } from "react-icons/io5";
-import { LuPencil } from "react-icons/lu";
-import { PiCoffeeLight } from "react-icons/pi";
-import { GiNotebook } from "react-icons/gi";
-import { GoPerson } from "react-icons/go";
-import { CiCalendar } from "react-icons/ci";
-import { IoChatboxEllipsesOutline } from "react-icons/io5";
-import { IoWalletSharp } from "react-icons/io5";
-
-
+import logoImg from './img/logo.png'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { RiMessage2Fill } from "react-icons/ri";
+import { FaCertificate } from "react-icons/fa";
+import { AiFillBackward } from "react-icons/ai";
 function Sidebar({ children }) {
     const menuItem = [
         {
@@ -23,78 +17,42 @@ function Sidebar({ children }) {
         },
         {
             path: "/orderList",
-            name: "Order List",
-            icon: <VscListFlat />,
+            name: "Message",
+            icon: <RiMessage2Fill />,
         },
         {
-            path: "/OrderDetail",
-            name: "Order Detail",
-            icon: <MdOutlineDescription />,
+            path: "/FoodDetail",
+            name: "Profile",
+            icon: <MdOutlineAccountCircle />,
         },
         {
             path: "/product",
-            name: "Customer",
+            name: "course",
             icon: <GoPeople />,
         },
         {
             path: "/productList",
-            name: "Analytics",
-            icon: <IoStatsChartSharp />,
-        },
-
-        {
-            path: "/Rewiews",
-            name: "Rewiews",
-            icon: <LuPencil />,
-        },
-
-        {
-            path: "/Foods",
-            name: "Foods",
-            icon: <PiCoffeeLight />,
+            name: "Certificate",
+            icon: <FaCertificate />,
         },
 
 
-        {
-            path: "/foodDetail",
-            name: "foodDetail",
-            icon: <GiNotebook />,
-        },
-        {
-            path: "/Customerdetail",
-            name: "Customer Detail",
-            icon: <GoPerson />,
-        },
 
 
-        {
-            path: "/Calendar",
-            name: "Calendar",
-            icon: <CiCalendar />,
-        },
 
-
-        {
-            path: "/Chat",
-            name: "Chat",
-            icon: <IoChatboxEllipsesOutline />,
-        },
-
-        {
-            path: "/Wallet",
-            name: "Wallet",
-            icon: <IoWalletSharp />,
-        },
 
     ];
 
     return (
-        <div className='container'>
+
+
+        <div>
             <div className="sidebar">
                 <div className="top_section">
-                    <div className="logo"></div>
-                    <h5 className='subtitle'>Modern Admin Dashboard</h5>
-                   
+                    <img className='logo' src={logoImg} alt="" />
+
+                    <h5 className='subtitle'>Qarshi Xalqaro Universteti</h5>
+
 
                 </div>
                 <div>
@@ -110,17 +68,11 @@ function Sidebar({ children }) {
                     }
                 </div>
 
-                <div className="cards">
-                    <div className="text">Please, organize your
-                        menus through button
-                        bellow!</div>
-
-                        <div className="img"></div>
-                        <button className='button'>+Add Menus</button>
-                </div>
+             <button className='exit'>Chiqish  <AiFillBackward className='btn-icon'/>  </button>
             </div>
             <main>{children}</main>
         </div>
+
     );
 }
 
